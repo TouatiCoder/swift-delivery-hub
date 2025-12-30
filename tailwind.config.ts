@@ -19,8 +19,9 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ["Cairo", "Inter", "system-ui", "sans-serif"],
+        arabic: ["Cairo", "sans-serif"],
+        latin: ["Inter", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -28,6 +29,13 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        brand: {
+          yellow: "hsl(var(--brand-yellow))",
+          "yellow-light": "hsl(var(--brand-yellow-light))",
+          "yellow-dark": "hsl(var(--brand-yellow-dark))",
+          red: "hsl(var(--brand-red))",
+          "red-dark": "hsl(var(--brand-red-dark))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -120,6 +128,10 @@ export default {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -129,10 +141,12 @@ export default {
         "slide-up": "slide-up 0.3s ease-out",
         "pulse-soft": "pulse-soft 2s ease-in-out infinite",
         shimmer: "shimmer 2s infinite linear",
+        float: "float 3s ease-in-out infinite",
       },
       spacing: {
-        "topbar": "var(--topbar-height)",
-        "sidebar": "var(--sidebar-width)",
+        topbar: "var(--topbar-height)",
+        navbar: "var(--navbar-height)",
+        sidebar: "var(--sidebar-width)",
         "sidebar-collapsed": "var(--sidebar-collapsed-width)",
       },
     },
