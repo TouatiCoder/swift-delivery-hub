@@ -10,9 +10,6 @@ import {
   Users,
   Award,
   Truck,
-  MapPin,
-  Phone,
-  Mail,
   ArrowRight,
   CheckCircle,
 } from 'lucide-react';
@@ -76,285 +73,185 @@ const milestones = [
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-background flex flex-col">
-      {/* Navigation Header */}
-      <header className="sticky top-0 z-50 border-b border-border bg-card/80 backdrop-blur-md">
-        <div className="container flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-foreground font-bold">
-              LM
-            </div>
-            <div>
-              <h1 className="font-bold text-lg">LastMile</h1>
-              <p className="text-[10px] text-muted-foreground leading-none">Delivery Morocco</p>
-            </div>
-          </Link>
+    <>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden py-20 md:py-28">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
+        <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
 
-          <nav className="hidden md:flex items-center gap-6">
-            <Link to="/" className="text-sm font-medium text-muted-foreground hover:text-accent transition-colors">
-              Home
-            </Link>
-            <Link to="/about" className="text-sm font-medium text-foreground hover:text-accent transition-colors">
-              About Us
-            </Link>
-            <Link to="/cities" className="text-sm font-medium text-muted-foreground hover:text-accent transition-colors">
-              Cities & Prices
-            </Link>
-            <Link to="/login" className="text-sm font-medium text-muted-foreground hover:text-accent transition-colors">
-              Login
-            </Link>
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Button size="sm" className="bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
-              <Link to="/login">Get Started</Link>
-            </Button>
+        <div className="container relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+              About <span className="text-accent">LastMile</span>
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              We are Morocco's leading last-mile delivery platform, connecting merchants
+              with customers through fast, reliable, and affordable delivery solutions.
+            </p>
           </div>
         </div>
-      </header>
+      </section>
 
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 md:py-28">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5" />
-          <div className="absolute top-20 right-10 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
-
-          <div className="container relative z-10">
-            <div className="max-w-3xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-                About <span className="text-accent">LastMile</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                We are Morocco's leading last-mile delivery platform, connecting merchants
-                with customers through fast, reliable, and affordable delivery solutions.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Mission & Vision */}
-        <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
-              <div className="rounded-2xl border border-border bg-card p-8">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent mb-6">
-                  <Target className="h-7 w-7" />
-                </div>
-                <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
-                <p className="text-muted-foreground">
-                  To empower Moroccan e-commerce businesses with reliable, fast, and affordable
-                  last-mile delivery solutions. We aim to be the backbone of online commerce,
-                  ensuring every package reaches its destination on time.
-                </p>
+      {/* Mission & Vision */}
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="container">
+          <div className="grid gap-8 md:grid-cols-2 max-w-5xl mx-auto">
+            <div className="rounded-2xl border border-border bg-card p-8">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent mb-6">
+                <Target className="h-7 w-7" />
               </div>
-              <div className="rounded-2xl border border-border bg-card p-8">
-                <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent mb-6">
-                  <Eye className="h-7 w-7" />
-                </div>
-                <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
-                <p className="text-muted-foreground">
-                  To become the most trusted delivery partner in North Africa, setting the
-                  standard for excellence in logistics technology and customer service,
-                  while creating opportunities for thousands of drivers.
-                </p>
+              <h2 className="text-2xl font-bold mb-4">Our Mission</h2>
+              <p className="text-muted-foreground">
+                To empower Moroccan e-commerce businesses with reliable, fast, and affordable
+                last-mile delivery solutions. We aim to be the backbone of online commerce,
+                ensuring every package reaches its destination on time.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-border bg-card p-8">
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent/10 text-accent mb-6">
+                <Eye className="h-7 w-7" />
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Values */}
-        <section className="py-16 md:py-24">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Values</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                The principles that guide everything we do at LastMile.
+              <h2 className="text-2xl font-bold mb-4">Our Vision</h2>
+              <p className="text-muted-foreground">
+                To become the most trusted delivery partner in North Africa, setting the
+                standard for excellence in logistics technology and customer service,
+                while creating opportunities for thousands of drivers.
               </p>
             </div>
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
-              {values.map((value) => {
-                const Icon = value.icon;
-                return (
-                  <div
-                    key={value.title}
-                    className="text-center p-6 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow"
-                  >
-                    <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent text-accent-foreground mx-auto mb-4">
-                      <Icon className="h-7 w-7" />
-                    </div>
-                    <h3 className="font-semibold text-lg mb-2">{value.title}</h3>
-                    <p className="text-sm text-muted-foreground">{value.description}</p>
-                  </div>
-                );
-              })}
-            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Timeline */}
-        <section className="py-16 md:py-24 bg-primary text-primary-foreground">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
-              <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
-                From a small startup to Morocco's leading delivery platform.
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-4 max-w-4xl mx-auto">
-              {milestones.map((milestone, index) => (
-                <div key={milestone.year} className="relative text-center">
-                  <div className="text-3xl font-bold text-accent mb-2">{milestone.year}</div>
-                  <h3 className="font-semibold mb-1">{milestone.title}</h3>
-                  <p className="text-sm text-primary-foreground/70">{milestone.description}</p>
-                </div>
-              ))}
-            </div>
+      {/* Our Values */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Values</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              The principles that guide everything we do at LastMile.
+            </p>
           </div>
-        </section>
 
-        {/* Team Section */}
-        <section className="py-16 md:py-24">
-          <div className="container">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                The dedicated professionals behind LastMile's success.
-              </p>
-            </div>
-
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
-              {teamMembers.map((member) => (
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
+            {values.map((value) => {
+              const Icon = value.icon;
+              return (
                 <div
-                  key={member.name}
+                  key={value.title}
                   className="text-center p-6 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow"
                 >
-                  <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center">
-                    <Users className="h-8 w-8 text-muted-foreground" />
+                  <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-accent text-accent-foreground mx-auto mb-4">
+                    <Icon className="h-7 w-7" />
                   </div>
-                  <h3 className="font-semibold text-lg">{member.name}</h3>
-                  <p className="text-sm text-accent font-medium mb-2">{member.role}</p>
-                  <p className="text-sm text-muted-foreground">{member.description}</p>
+                  <h3 className="font-semibold text-lg mb-2">{value.title}</h3>
+                  <p className="text-sm text-muted-foreground">{value.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline */}
+      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Journey</h2>
+            <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
+              From a small startup to Morocco's leading delivery platform.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-4 max-w-4xl mx-auto">
+            {milestones.map((milestone) => (
+              <div key={milestone.year} className="relative text-center">
+                <div className="text-3xl font-bold text-accent mb-2">{milestone.year}</div>
+                <h3 className="font-semibold mb-1">{milestone.title}</h3>
+                <p className="text-sm text-primary-foreground/70">{milestone.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              The dedicated professionals behind LastMile's success.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
+            {teamMembers.map((member) => (
+              <div
+                key={member.name}
+                className="text-center p-6 rounded-2xl border border-border bg-card hover:shadow-lg transition-shadow"
+              >
+                <div className="w-20 h-20 rounded-full bg-muted mx-auto mb-4 flex items-center justify-center">
+                  <Users className="h-8 w-8 text-muted-foreground" />
+                </div>
+                <h3 className="font-semibold text-lg">{member.name}</h3>
+                <p className="text-sm text-accent font-medium mb-2">{member.role}</p>
+                <p className="text-sm text-muted-foreground">{member.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-16 md:py-24 bg-muted/30">
+        <div className="container">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Partner With Us?</h2>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2">
+              {[
+                'Nationwide coverage across all Moroccan cities',
+                'Competitive pricing with transparent fees',
+                'Real-time tracking for every delivery',
+                'Fast COD settlements within 48 hours',
+                'Dedicated support team available 24/7',
+                'Easy integration with your e-commerce platform',
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border">
+                  <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
+                  <span className="text-sm font-medium">{item}</span>
                 </div>
               ))}
             </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Why Choose Us */}
-        <section className="py-16 md:py-24 bg-muted/30">
-          <div className="container">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Partner With Us?</h2>
-              </div>
-
-              <div className="grid gap-4 md:grid-cols-2">
-                {[
-                  'Nationwide coverage across all Moroccan cities',
-                  'Competitive pricing with transparent fees',
-                  'Real-time tracking for every delivery',
-                  'Fast COD settlements within 48 hours',
-                  'Dedicated support team available 24/7',
-                  'Easy integration with your e-commerce platform',
-                ].map((item) => (
-                  <div key={item} className="flex items-center gap-3 p-4 rounded-xl bg-card border border-border">
-                    <CheckCircle className="h-5 w-5 text-accent flex-shrink-0" />
-                    <span className="text-sm font-medium">{item}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-16 md:py-24">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                Join hundreds of successful merchants who trust LastMile for their deliveries.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground gap-2" asChild>
-                  <Link to="/login">
-                    Start Shipping Today
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link to="/cities">View Pricing</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="border-t border-border bg-card py-12">
+      {/* CTA Section */}
+      <section className="py-16 md:py-24">
         <div className="container">
-          <div className="grid gap-8 md:grid-cols-4">
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent text-accent-foreground font-bold">
-                  LM
-                </div>
-                <div>
-                  <h3 className="font-bold">LastMile</h3>
-                  <p className="text-xs text-muted-foreground">Delivery Morocco</p>
-                </div>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Morocco's leading last-mile delivery platform.
-              </p>
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+            <p className="text-lg text-muted-foreground mb-8">
+              Join hundreds of successful merchants who trust LastMile for their deliveries.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground gap-2" asChild>
+                <Link to="/login">
+                  Start Shipping Today
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
+              </Button>
+              <Button size="lg" variant="outline" asChild>
+                <Link to="/cities">View Pricing</Link>
+              </Button>
             </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Quick Links</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/" className="hover:text-accent transition-colors">Home</Link></li>
-                <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
-                <li><Link to="/cities" className="hover:text-accent transition-colors">Cities & Pricing</Link></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li className="flex items-center gap-2">
-                  <MapPin className="h-4 w-4" />
-                  Boulevard Anfa, Casablanca
-                </li>
-                <li className="flex items-center gap-2">
-                  <Phone className="h-4 w-4" />
-                  +212 5 22 00 00 00
-                </li>
-                <li className="flex items-center gap-2">
-                  <Mail className="h-4 w-4" />
-                  contact@lastmile.ma
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Portals</h4>
-              <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link to="/login" className="hover:text-accent transition-colors">Login</Link></li>
-                <li><Link to="/merchant" className="hover:text-accent transition-colors">Merchant Portal</Link></li>
-                <li><Link to="/driver" className="hover:text-accent transition-colors">Driver App</Link></li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-border mt-8 pt-8 text-center text-sm text-muted-foreground">
-            © {new Date().getFullYear()} LastMile Delivery. All rights reserved.
           </div>
         </div>
-      </footer>
-    </div>
+      </section>
+    </>
   );
 };
 
