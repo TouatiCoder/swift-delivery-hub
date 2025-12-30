@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import CitiesPricing from "./pages/CitiesPricing";
 import NotFound from "./pages/NotFound";
 
 // Admin imports
@@ -37,8 +38,9 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          {/* Landing Page */}
+          {/* Public Pages */}
           <Route path="/" element={<Index />} />
+          <Route path="/cities" element={<CitiesPricing />} />
 
           {/* Admin Dashboard Routes */}
           <Route path="/admin" element={<AdminLayout />}>
