@@ -3,17 +3,24 @@
 @tailwind utilities;
 
 /* 
-  LOGISTICS SAAS DESIGN SYSTEM
-  Deep navy/slate professional tones with vibrant orange accents
-  Clean, data-focused, operational aesthetic
+  OZON EXPRESS DESIGN SYSTEM
+  Yellow/Gold brand identity with RTL support
+  Clean logistics SaaS design matching OzonExpress.ma
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    /* Base colors - Light mode (professional slate) */
-    --background: 210 20% 98%;
+    /* Brand Colors - Yellow/Gold Theme */
+    --brand-yellow: 45 100% 51%;
+    --brand-yellow-light: 45 100% 60%;
+    --brand-yellow-dark: 45 100% 45%;
+    --brand-red: 0 84% 50%;
+    --brand-red-dark: 0 84% 40%;
+    
+    /* Base colors - Light mode */
+    --background: 0 0% 100%;
     --foreground: 222 47% 11%;
 
     /* Card surfaces */
@@ -24,20 +31,20 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    /* Primary - Deep Navy Blue */
-    --primary: 222 47% 20%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Brand Yellow */
+    --primary: 45 100% 51%;
+    --primary-foreground: 222 47% 11%;
 
-    /* Secondary - Soft slate */
-    --secondary: 214 32% 91%;
+    /* Secondary - Light gray */
+    --secondary: 210 20% 96%;
     --secondary-foreground: 222 47% 20%;
 
     /* Muted surfaces */
     --muted: 210 20% 96%;
     --muted-foreground: 215 16% 47%;
 
-    /* Accent - Vibrant Orange for CTAs */
-    --accent: 24 95% 53%;
+    /* Accent - Brand Red for CTAs */
+    --accent: 0 84% 50%;
     --accent-foreground: 0 0% 100%;
 
     /* Status Colors */
@@ -56,30 +63,31 @@
     /* Borders & Inputs */
     --border: 214 32% 91%;
     --input: 214 32% 91%;
-    --ring: 222 47% 20%;
+    --ring: 45 100% 51%;
 
     --radius: 0.625rem;
 
-    /* Sidebar - Darker professional look */
+    /* Sidebar - Dark professional look */
     --sidebar-background: 222 47% 11%;
     --sidebar-foreground: 210 40% 90%;
-    --sidebar-primary: 24 95% 53%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 45 100% 51%;
+    --sidebar-primary-foreground: 222 47% 11%;
     --sidebar-accent: 222 47% 18%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 222 47% 18%;
-    --sidebar-ring: 24 95% 53%;
+    --sidebar-ring: 45 100% 51%;
     --sidebar-muted: 215 16% 60%;
 
     /* Custom tokens */
-    --topbar-height: 4rem;
+    --topbar-height: 2.5rem;
+    --navbar-height: 4rem;
     --sidebar-width: 16rem;
     --sidebar-collapsed-width: 4.5rem;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(222 47% 20%), hsl(222 47% 28%));
-    --gradient-accent: linear-gradient(135deg, hsl(24 95% 53%), hsl(32 95% 55%));
-    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%), hsl(142 71% 52%));
+    --gradient-primary: linear-gradient(135deg, hsl(45 100% 51%), hsl(45 100% 60%));
+    --gradient-accent: linear-gradient(135deg, hsl(0 84% 50%), hsl(0 84% 60%));
+    --gradient-hero: linear-gradient(180deg, hsl(45 100% 51%) 0%, hsl(45 100% 55%) 50%, hsl(45 100% 60%) 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(222 47% 11% / 0.05);
@@ -98,8 +106,8 @@
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 24 95% 53%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 45 100% 51%;
+    --primary-foreground: 222 47% 11%;
 
     --secondary: 222 47% 18%;
     --secondary-foreground: 210 40% 98%;
@@ -107,7 +115,7 @@
     --muted: 222 47% 15%;
     --muted-foreground: 215 20% 65%;
 
-    --accent: 24 95% 53%;
+    --accent: 0 84% 50%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62% 50%;
@@ -115,16 +123,16 @@
 
     --border: 222 47% 18%;
     --input: 222 47% 18%;
-    --ring: 24 95% 53%;
+    --ring: 45 100% 51%;
 
     --sidebar-background: 222 47% 7%;
     --sidebar-foreground: 210 40% 90%;
-    --sidebar-primary: 24 95% 53%;
-    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-primary: 45 100% 51%;
+    --sidebar-primary-foreground: 222 47% 11%;
     --sidebar-accent: 222 47% 14%;
     --sidebar-accent-foreground: 210 40% 98%;
     --sidebar-border: 222 47% 14%;
-    --sidebar-ring: 24 95% 53%;
+    --sidebar-ring: 45 100% 51%;
     --sidebar-muted: 215 16% 55%;
   }
 }
@@ -136,7 +144,11 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    text-align: right;
   }
 
   /* Custom scrollbar */
@@ -159,6 +171,38 @@
 }
 
 @layer components {
+  /* Top Info Bar */
+  .info-bar {
+    @apply bg-primary text-primary-foreground py-2;
+  }
+
+  .info-bar-link {
+    @apply flex items-center gap-1.5 text-sm font-medium hover:opacity-80 transition-opacity;
+  }
+
+  /* Main Navbar */
+  .main-navbar {
+    @apply bg-background border-b border-border shadow-sm;
+  }
+
+  .nav-link {
+    @apply text-foreground font-medium px-4 py-2 hover:text-primary transition-colors;
+  }
+
+  .nav-link.active {
+    @apply text-primary;
+  }
+
+  /* Hero Wave Effect */
+  .hero-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom right, hsl(var(--primary)) 49%, transparent 50%);
+  }
+
   /* Status badge variants */
   .status-badge {
     @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium;
@@ -189,8 +233,31 @@
     @apply relative overflow-hidden rounded-xl bg-card p-6 shadow-card border border-border/50 transition-all duration-200 hover:shadow-md;
   }
 
-  .kpi-card-accent {
-    @apply absolute inset-0 opacity-5;
+  /* Feature Card */
+  .feature-card {
+    @apply bg-card rounded-2xl p-6 shadow-md border border-border/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+
+  /* Service Icon Card */
+  .service-icon-card {
+    @apply flex flex-col items-center gap-3 p-6 rounded-xl bg-card shadow-sm border border-border/50 hover:shadow-md transition-all;
+  }
+
+  /* Price Table */
+  .price-table {
+    @apply w-full text-sm;
+  }
+
+  .price-table th {
+    @apply text-center font-semibold text-white uppercase text-sm tracking-wide px-4 py-3 bg-accent;
+  }
+
+  .price-table td {
+    @apply px-4 py-3 border-b border-border/50 text-center;
+  }
+
+  .price-table tbody tr {
+    @apply transition-colors hover:bg-muted/30;
   }
 
   /* Data table styles */
@@ -221,7 +288,7 @@
 
   /* Form input focus ring */
   .input-focus {
-    @apply focus:ring-2 focus:ring-accent/30 focus:border-accent transition-all duration-200;
+    @apply focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all duration-200;
   }
 
   /* Smooth page transitions */
@@ -235,7 +302,26 @@
   }
 
   .mobile-nav-item.active {
-    @apply text-accent font-medium;
+    @apply text-primary font-medium;
+  }
+
+  /* Yellow Section Background */
+  .bg-brand-yellow {
+    @apply bg-primary;
+  }
+
+  /* Tracking Input */
+  .tracking-input {
+    @apply w-full px-4 py-3 rounded-lg border-2 border-primary/20 focus:border-primary focus:outline-none transition-colors text-lg;
+  }
+
+  /* Step Card */
+  .step-card {
+    @apply flex flex-col items-center text-center p-6;
+  }
+
+  .step-number {
+    @apply w-12 h-12 rounded-full bg-accent text-accent-foreground flex items-center justify-center text-xl font-bold mb-4;
   }
 }
 
@@ -247,5 +333,13 @@
 
   .glass-effect {
     @apply backdrop-blur-md bg-background/80;
+  }
+
+  .font-arabic {
+    font-family: 'Cairo', sans-serif;
+  }
+
+  .font-latin {
+    font-family: 'Inter', system-ui, sans-serif;
   }
 }
