@@ -106,3 +106,58 @@ export const getCurrentUser = (): User | null => {
   const userStr = localStorage.getItem('user');
   return userStr ? JSON.parse(userStr) : null;
 };
+
+/**
+ * Merchant registration data interface
+ */
+export interface MerchantRegistrationData {
+  storeName: string;
+  fullName: string;
+  email: string;
+  phone: string;
+  city: string;
+  website?: string;
+  monthlyOrders: string;
+  password: string;
+}
+
+/**
+ * Driver registration data interface
+ */
+export interface DriverRegistrationData {
+  fullName: string;
+  phone: string;
+  city: string;
+  vehicleType: string;
+  nationalId: string;
+  licenseNumber: string;
+  password: string;
+}
+
+/**
+ * Mock merchant registration
+ * TODO: Replace with actual API call to Laravel backend
+ */
+export const registerMerchant = async (data: MerchantRegistrationData): Promise<{ success: boolean; message: string }> => {
+  await new Promise(resolve => setTimeout(resolve, 1500));
+  
+  // Mock successful registration
+  return {
+    success: true,
+    message: 'Your request has been submitted. Our team will contact you.'
+  };
+};
+
+/**
+ * Mock driver registration
+ * TODO: Replace with actual API call to Laravel backend
+ */
+export const registerDriver = async (data: DriverRegistrationData): Promise<{ success: boolean; message: string }> => {
+  await new Promise(resolve => setTimeout(resolve, 1500));
+  
+  // Mock successful registration
+  return {
+    success: true,
+    message: 'Your application has been received. We will contact you soon.'
+  };
+};

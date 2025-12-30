@@ -71,18 +71,12 @@ export default function MerchantLogin() {
               <p className="text-sm text-muted-foreground">
                 Don't have an account?
               </p>
-              <Button
-                variant="link"
-                className="text-primary font-medium p-0 h-auto"
-                onClick={() => {
-                  toast({
-                    title: "Registration Coming Soon",
-                    description: "Merchant registration will be available soon.",
-                  });
-                }}
+              <Link
+                to="/merchant/register"
+                className="text-primary font-medium hover:underline"
               >
                 Become a Merchant →
-              </Button>
+              </Link>
             </div>
           </div>
 

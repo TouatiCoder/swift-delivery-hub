@@ -11,6 +11,8 @@ import Login from "./pages/auth/Login";
 import AdminLogin from "./pages/auth/AdminLogin";
 import MerchantLogin from "./pages/auth/MerchantLogin";
 import DriverLogin from "./pages/auth/DriverLogin";
+import MerchantRegister from "./pages/auth/MerchantRegister";
+import DriverRegister from "./pages/auth/DriverRegister";
 import NotFound from "./pages/NotFound";
 
 // Admin imports
@@ -56,6 +58,10 @@ const App = () => (
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route path="/merchant/login" element={<MerchantLogin />} />
           <Route path="/driver/login" element={<DriverLogin />} />
+          
+          {/* Registration pages */}
+          <Route path="/merchant/register" element={<MerchantRegister />} />
+          <Route path="/driver/register" element={<DriverRegister />} />
 
           {/* Admin Dashboard Routes */}
           <Route path="/admin" element={<AdminLayout />}>
