@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import CitiesPricing from "./pages/CitiesPricing";
+import Login from "./pages/auth/Login";
 import NotFound from "./pages/NotFound";
 
 // Admin imports
@@ -41,6 +42,7 @@ const App = () => (
           {/* Public Pages */}
           <Route path="/" element={<Index />} />
           <Route path="/cities" element={<CitiesPricing />} />
+          <Route path="/login" element={<Login />} />
 
           {/* Admin Dashboard Routes */}
           <Route path="/admin" element={<AdminLayout />}>
