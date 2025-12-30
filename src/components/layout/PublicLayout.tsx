@@ -39,6 +39,12 @@ const PublicLayout = () => {
             >
               Home
             </Link>
+            <a 
+              href="/#services" 
+              className="text-sm font-medium transition-colors hover:text-accent text-muted-foreground"
+            >
+              Services
+            </a>
             <Link 
               to="/about" 
               className={cn(
