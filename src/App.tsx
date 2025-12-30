@@ -8,6 +8,9 @@ import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import CitiesPricing from "./pages/CitiesPricing";
 import Login from "./pages/auth/Login";
+import AdminLogin from "./pages/auth/AdminLogin";
+import MerchantLogin from "./pages/auth/MerchantLogin";
+import DriverLogin from "./pages/auth/DriverLogin";
 import NotFound from "./pages/NotFound";
 
 // Admin imports
@@ -48,8 +51,11 @@ const App = () => (
             <Route path="/cities" element={<CitiesPricing />} />
           </Route>
 
-          {/* Login page (standalone) */}
+          {/* Login pages (standalone - role-specific) */}
           <Route path="/login" element={<Login />} />
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/merchant/login" element={<MerchantLogin />} />
+          <Route path="/driver/login" element={<DriverLogin />} />
 
           {/* Admin Dashboard Routes */}
           <Route path="/admin" element={<AdminLayout />}>
