@@ -1,17 +1,19 @@
 /**
  * MainNavbar Component
- * Main navigation bar with logo, Arabic/French links, and auth buttons
- * Matches OzonExpress.ma design with RTL support
+ * Main navigation bar with logo, bilingual links, auth buttons, and language switcher
+ * Professional design with RTL/LTR support based on selected language
  */
 
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, User, UserPlus } from 'lucide-react';
+import { Menu, X, User, UserPlus, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const MainNavbar = () => {
   const location = useLocation();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, isRTL } = useLanguage();
 
   // Navigation links with Arabic and French labels
   const navLinks = [
@@ -28,49 +30,77 @@ const MainNavbar = () => {
     return location.pathname.startsWith(path);
   };
 
+  // Get label based on current language
+  const getLabel = (labelAr: string, labelFr: string) => {
+    return language === 'ar' ? labelAr : labelFr;
+  };
+
+  // Toggle language
+  const toggleLanguage = () => {
+    setLanguage(language === 'ar' ? 'fr' : 'ar');
+  };
+
   return (
-    <nav className="main-navbar sticky top-0 z-50">
+    <nav className="bg-background border-b border-border shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-foreground">
+              <span className="text-2xl font-bold text-neutral-dark">
                 Last<span className="text-primary">Mile</span>
               </span>
               <span className="text-xs text-muted-foreground ml-1">Express</span>
             </div>
           </Link>
 
-          {/* Desktop Navigation - RTL order */}
-          <div className="hidden lg:flex items-center gap-1" dir="rtl">
+          {/* Desktop Navigation */}
+          <div className="hidden lg:flex items-center gap-1" dir={isRTL ? 'rtl' : 'ltr'}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 to={link.href}
-                className={`nav-link font-arabic ${isActive(link.href) ? 'active text-primary' : ''}`}
+                className={`px-4 py-2 font-medium transition-colors ${
+                  isRTL ? 'font-arabic' : 'font-latin'
+                } ${isActive(link.href) ? 'text-primary' : 'text-foreground hover:text-primary'}`}
               >
-                {link.labelAr}
+                {getLabel(link.labelAr, link.labelFr)}
               </Link>
             ))}
           </div>
 
-          {/* Auth Buttons */}
+          {/* Right side: Language Switcher + Auth Buttons */}
           <div className="hidden lg:flex items-center gap-3">
+            {/* Language Switcher */}
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={toggleLanguage}
+              className="gap-2 border-border hover:bg-secondary"
+            >
+              <Globe className="h-4 w-4" />
+              <span className={language === 'ar' ? 'font-arabic' : 'font-latin'}>
+                {language === 'ar' ? 'FR' : 'عربي'}
+              </span>
+            </Button>
+
+            {/* Login Button */}
             <Link to="/login">
-              <Button variant="outline" className="gap-2">
+              <Button variant="outline" className="gap-2 border-neutral-dark text-neutral-dark hover:bg-neutral-dark hover:text-neutral-dark-foreground">
                 <User className="h-4 w-4" />
-                <span className="font-latin">Se connecter</span>
-                <span className="mx-1">/</span>
-                <span className="font-arabic">الدخول</span>
+                <span className={isRTL ? 'font-arabic' : 'font-latin'}>
+                  {language === 'ar' ? 'الدخول' : 'Se connecter'}
+                </span>
               </Button>
             </Link>
+
+            {/* Register Button */}
             <Link to="/merchant/register">
-              <Button className="gap-2 bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button className="gap-2 bg-secondary-red hover:bg-secondary-red/90 text-secondary-red-foreground">
                 <UserPlus className="h-4 w-4" />
-                <span className="font-latin">Inscription</span>
-                <span className="mx-1">/</span>
-                <span className="font-arabic">التسجيل</span>
+                <span className={isRTL ? 'font-arabic' : 'font-latin'}>
+                  {language === 'ar' ? 'التسجيل' : 'Inscription'}
+                </span>
               </Button>
             </Link>
           </div>
@@ -82,9 +112,9 @@ const MainNavbar = () => {
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-6 w-6 text-neutral-dark" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-6 w-6 text-neutral-dark" />
             )}
           </button>
         </div>
@@ -92,17 +122,32 @@ const MainNavbar = () => {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="lg:hidden py-4 border-t border-border animate-fade-in">
-            <div className="flex flex-col gap-2" dir="rtl">
+            {/* Language Switcher Mobile */}
+            <div className="pb-4 mb-4 border-b border-border">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={toggleLanguage}
+                className="w-full gap-2 justify-center"
+              >
+                <Globe className="h-4 w-4" />
+                <span>
+                  {language === 'ar' ? 'Passer au Français' : 'التبديل إلى العربية'}
+                </span>
+              </Button>
+            </div>
+
+            <div className="flex flex-col gap-2" dir={isRTL ? 'rtl' : 'ltr'}>
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`nav-link font-arabic text-lg py-3 ${
-                    isActive(link.href) ? 'active text-primary bg-primary/5' : ''
-                  }`}
+                  className={`px-4 py-3 text-lg font-medium ${
+                    isRTL ? 'font-arabic' : 'font-latin'
+                  } ${isActive(link.href) ? 'text-primary bg-primary/5' : 'text-foreground'}`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  {link.labelAr}
+                  {getLabel(link.labelAr, link.labelFr)}
                 </Link>
               ))}
             </div>
@@ -110,15 +155,15 @@ const MainNavbar = () => {
             {/* Mobile Auth Buttons */}
             <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border">
               <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="outline" className="w-full gap-2">
+                <Button variant="outline" className="w-full gap-2 border-neutral-dark text-neutral-dark">
                   <User className="h-4 w-4" />
-                  <span>Se connecter / الدخول</span>
+                  <span>{language === 'ar' ? 'الدخول' : 'Se connecter'}</span>
                 </Button>
               </Link>
               <Link to="/merchant/register" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full gap-2 bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Button className="w-full gap-2 bg-secondary-red hover:bg-secondary-red/90 text-secondary-red-foreground">
                   <UserPlus className="h-4 w-4" />
-                  <span>Inscription / التسجيل</span>
+                  <span>{language === 'ar' ? 'التسجيل' : 'Inscription'}</span>
                 </Button>
               </Link>
             </div>
