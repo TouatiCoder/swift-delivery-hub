@@ -29,17 +29,17 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        // Primary Gold Yellow #FFC107
+        // Primary Emerald Teal #0F766E
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
         },
-        // Secondary Deep Red #E53935
-        "secondary-red": {
-          DEFAULT: "hsl(var(--secondary-red))",
-          foreground: "hsl(var(--secondary-red-foreground))",
+        // Secondary Burnt Copper #B45309
+        "secondary-copper": {
+          DEFAULT: "hsl(var(--secondary-copper))",
+          foreground: "hsl(var(--secondary-copper-foreground))",
         },
-        // Neutral Charcoal #1F2937
+        // Neutral Midnight Graphite #111827
         "neutral-dark": {
           DEFAULT: "hsl(var(--neutral-dark))",
           foreground: "hsl(var(--neutral-dark-foreground))",

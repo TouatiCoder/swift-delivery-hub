@@ -110,13 +110,13 @@ const Index = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground gap-2" asChild>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2" asChild>
                 <Link to="/login">
                   Start Shipping Today
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" className="border-secondary-copper text-secondary-copper hover:bg-secondary-copper hover:text-secondary-copper-foreground" asChild>
                 <Link to="/cities">View Pricing</Link>
               </Button>
             </div>
@@ -156,9 +156,9 @@ const Index = () => {
               return (
                 <div
                   key={service.title}
-                  className="group rounded-2xl border border-border bg-card p-6 hover:shadow-lg hover:border-accent/30 transition-all duration-300"
+                  className="group rounded-2xl border border-border bg-card p-6 hover:shadow-lg hover:border-primary/30 transition-all duration-300"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/10 text-accent mb-4 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                     <Icon className="h-6 w-6" />
                   </div>
                   <h3 className="font-semibold text-lg mb-2">{service.title}</h3>
@@ -182,17 +182,17 @@ const Index = () => {
           
           <div className="relative max-w-4xl mx-auto">
             {/* Connection line */}
-            <div className="hidden md:block absolute top-24 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-accent/20 via-accent to-accent/20" />
+            <div className="hidden md:block absolute top-24 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-primary/20 via-primary to-primary/20" />
             
             <div className="grid gap-8 md:grid-cols-4">
               {steps.map((item) => {
                 const Icon = item.icon;
                 return (
                   <div key={item.step} className="relative text-center">
-                    <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-accent text-accent-foreground mx-auto mb-4 shadow-lg">
+                    <div className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary text-primary-foreground mx-auto mb-4 shadow-lg">
                       <Icon className="h-7 w-7" />
                     </div>
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 bg-primary text-primary-foreground text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center">
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 bg-secondary-copper text-secondary-copper-foreground text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center">
                       {item.step}
                     </div>
                     <h3 className="font-semibold mb-2">{item.title}</h3>
@@ -206,11 +206,11 @@ const Index = () => {
       </section>
 
       {/* Cities Coverage Section */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground">
+      <section className="py-16 md:py-24 bg-neutral-dark text-neutral-dark-foreground">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Nationwide Coverage</h2>
-            <p className="text-lg text-primary-foreground/80 max-w-2xl mx-auto">
+            <p className="text-lg text-neutral-dark-foreground/80 max-w-2xl mx-auto">
               We deliver to all major cities in Morocco with competitive pricing.
             </p>
           </div>
@@ -219,16 +219,16 @@ const Index = () => {
             {featuredCities.map((city) => (
               <div
                 key={city.name}
-                className="rounded-xl bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 p-4 text-center hover:bg-primary-foreground/15 transition-colors"
+                className="rounded-xl bg-neutral-dark-foreground/10 backdrop-blur-sm border border-neutral-dark-foreground/20 p-4 text-center hover:bg-neutral-dark-foreground/15 transition-colors"
               >
                 <div className="font-semibold mb-1">{city.name}</div>
-                <div className="text-sm text-primary-foreground/70">from {city.price} MAD</div>
+                <div className="text-sm text-neutral-dark-foreground/70">from {city.price} MAD</div>
               </div>
             ))}
           </div>
           
           <div className="text-center">
-            <Button variant="secondary" size="lg" className="gap-2" asChild>
+            <Button variant="secondary" size="lg" className="gap-2 bg-primary text-primary-foreground hover:bg-primary/90" asChild>
               <Link to="/cities">
                 View All Cities & Prices
                 <ChevronRight className="h-4 w-4" />
@@ -264,7 +264,7 @@ const Index = () => {
           
           <div className="grid gap-6 md:grid-cols-3 mt-8 max-w-4xl mx-auto">
             <div className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <MapPin className="h-5 w-5" />
               </div>
               <div>
@@ -273,7 +273,7 @@ const Index = () => {
               </div>
             </div>
             <div className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <Phone className="h-5 w-5" />
               </div>
               <div>
@@ -282,7 +282,7 @@ const Index = () => {
               </div>
             </div>
             <div className="flex items-center gap-4 p-4 rounded-xl border border-border bg-card">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10 text-accent">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <Mail className="h-5 w-5" />
               </div>
               <div>
@@ -303,13 +303,13 @@ const Index = () => {
               Join hundreds of Moroccan merchants who trust LastMile for their logistics needs.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground gap-2" asChild>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground gap-2" asChild>
                 <Link to="/login">
                   Get Started Free
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" asChild>
+              <Button size="lg" variant="outline" className="border-secondary-copper text-secondary-copper hover:bg-secondary-copper hover:text-secondary-copper-foreground" asChild>
                 <Link to="/admin">Admin Demo</Link>
               </Button>
             </div>

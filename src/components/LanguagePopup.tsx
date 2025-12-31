@@ -27,12 +27,12 @@ const LanguagePopup: React.FC = () => {
         {/* Header */}
         <div className="bg-primary px-6 py-8 text-center">
           <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-white/20 flex items-center justify-center">
-            <Globe className="w-8 h-8 text-neutral-dark" />
+            <Globe className="w-8 h-8 text-primary-foreground" />
           </div>
-          <h2 className="text-2xl font-bold text-neutral-dark mb-2">
+          <h2 className="text-2xl font-bold text-primary-foreground mb-2">
             Choose Your Language
           </h2>
-          <p className="text-neutral-dark/80 text-sm">
+          <p className="text-primary-foreground/80 text-sm">
             اختر لغتك المفضلة / Choisissez votre langue
           </p>
         </div>
@@ -44,11 +44,11 @@ const LanguagePopup: React.FC = () => {
             onClick={() => handleSelectLanguage('ar')}
             className="w-full flex items-center gap-4 p-4 rounded-xl border-2 border-border hover:border-primary hover:bg-primary/5 transition-all duration-200 group"
           >
-            <div className="w-12 h-12 rounded-full bg-secondary-red/10 flex items-center justify-center text-2xl">
+            <div className="w-12 h-12 rounded-full bg-secondary-copper/10 flex items-center justify-center text-2xl">
               🇲🇦
             </div>
             <div className="flex-1 text-right">
-              <span className="block text-xl font-bold text-neutral-dark font-arabic">
+              <span className="block text-xl font-bold text-foreground font-arabic">
                 العربية
               </span>
               <span className="block text-sm text-muted-foreground">
@@ -63,11 +63,11 @@ const LanguagePopup: React.FC = () => {
             onClick={() => handleSelectLanguage('fr')}
             className="w-full flex items-center gap-4 p-4 rounded-xl border-2 border-border hover:border-primary hover:bg-primary/5 transition-all duration-200 group"
           >
-            <div className="w-12 h-12 rounded-full bg-info/10 flex items-center justify-center text-2xl">
+            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-2xl">
               🇫🇷
             </div>
             <div className="flex-1 text-left">
-              <span className="block text-xl font-bold text-neutral-dark font-latin">
+              <span className="block text-xl font-bold text-foreground font-latin">
                 Français
               </span>
               <span className="block text-sm text-muted-foreground">
