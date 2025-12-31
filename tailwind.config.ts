@@ -29,16 +29,20 @@ export default {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        brand: {
-          yellow: "hsl(var(--brand-yellow))",
-          "yellow-light": "hsl(var(--brand-yellow-light))",
-          "yellow-dark": "hsl(var(--brand-yellow-dark))",
-          red: "hsl(var(--brand-red))",
-          "red-dark": "hsl(var(--brand-red-dark))",
-        },
+        // Primary Gold Yellow #FFC107
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+        },
+        // Secondary Deep Red #E53935
+        "secondary-red": {
+          DEFAULT: "hsl(var(--secondary-red))",
+          foreground: "hsl(var(--secondary-red-foreground))",
+        },
+        // Neutral Charcoal #1F2937
+        "neutral-dark": {
+          DEFAULT: "hsl(var(--neutral-dark))",
+          foreground: "hsl(var(--neutral-dark-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
