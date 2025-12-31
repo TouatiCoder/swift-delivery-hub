@@ -44,7 +44,7 @@ const TopInfoBar = () => {
   ];
 
   return (
-    <div className="info-bar">
+    <div className="bg-primary text-primary-foreground py-2">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center md:justify-between flex-wrap gap-2 md:gap-4">
           {/* Info links - hidden on mobile, visible on desktop */}

@@ -86,7 +86,7 @@ const MainNavbar = () => {
 
             {/* Login Button */}
             <Link to="/login">
-              <Button variant="outline" className="gap-2 border-neutral-dark text-neutral-dark hover:bg-neutral-dark hover:text-neutral-dark-foreground">
+              <Button variant="outline" className="gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                 <User className="h-4 w-4" />
                 <span className={isRTL ? 'font-arabic' : 'font-latin'}>
                   {language === 'ar' ? 'الدخول' : 'Se connecter'}
@@ -96,7 +96,7 @@ const MainNavbar = () => {
 
             {/* Register Button */}
             <Link to="/merchant/register">
-              <Button className="gap-2 bg-secondary-red hover:bg-secondary-red/90 text-secondary-red-foreground">
+              <Button className="gap-2 bg-secondary-copper hover:bg-secondary-copper/90 text-secondary-copper-foreground">
                 <UserPlus className="h-4 w-4" />
                 <span className={isRTL ? 'font-arabic' : 'font-latin'}>
                   {language === 'ar' ? 'التسجيل' : 'Inscription'}
@@ -155,13 +155,13 @@ const MainNavbar = () => {
             {/* Mobile Auth Buttons */}
             <div className="flex flex-col gap-3 mt-4 pt-4 border-t border-border">
               <Link to="/login" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button variant="outline" className="w-full gap-2 border-neutral-dark text-neutral-dark">
+                <Button variant="outline" className="w-full gap-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                   <User className="h-4 w-4" />
                   <span>{language === 'ar' ? 'الدخول' : 'Se connecter'}</span>
                 </Button>
               </Link>
               <Link to="/merchant/register" onClick={() => setIsMobileMenuOpen(false)}>
-                <Button className="w-full gap-2 bg-secondary-red hover:bg-secondary-red/90 text-secondary-red-foreground">
+                <Button className="w-full gap-2 bg-secondary-copper hover:bg-secondary-copper/90 text-secondary-copper-foreground">
                   <UserPlus className="h-4 w-4" />
                   <span>{language === 'ar' ? 'التسجيل' : 'Inscription'}</span>
                 </Button>
