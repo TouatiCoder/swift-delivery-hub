@@ -11,6 +11,8 @@ import AboutUs from "./pages/AboutUs";
 import CitiesPricing from "./pages/CitiesPricing";
 import Services from "./pages/Services";
 import News from "./pages/News";
+import Recruitment from "./pages/Recruitment";
+import Contact from "./pages/Contact";
 import Login from "./pages/auth/Login";
 import AdminLogin from "./pages/auth/AdminLogin";
 import MerchantLogin from "./pages/auth/MerchantLogin";
@@ -40,6 +42,7 @@ import { DriverLayout } from "@/components/driver/DriverLayout";
 import DriverOrders from "@/pages/driver/DriverOrders";
 import DriverUpdateStatus from "@/pages/driver/DriverUpdateStatus";
 import DriverCash from "@/pages/driver/DriverCash";
+import BecomeDriver from "@/pages/driver/BecomeDriver";
 
 const queryClient = new QueryClient();
 
@@ -60,7 +63,10 @@ const App = () => (
             <Route path="/cities" element={<CitiesPricing />} />
             <Route path="/services" element={<Services />} />
             <Route path="/news" element={<News />} />
+            <Route path="/recruitment" element={<Recruitment />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/prices" element={<Navigate to="/cities" replace />} />
+            <Route path="/driver/become" element={<BecomeDriver />} />
           </Route>
 
           {/* Login pages (standalone - role-specific) */}
