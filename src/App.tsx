@@ -2,13 +2,15 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import LanguagePopup from "@/components/LanguagePopup";
 import PublicLayout from "@/components/layout/PublicLayout";
 import Index from "./pages/Index";
 import AboutUs from "./pages/AboutUs";
 import CitiesPricing from "./pages/CitiesPricing";
+import Services from "./pages/Services";
+import News from "./pages/News";
 import Login from "./pages/auth/Login";
 import AdminLogin from "./pages/auth/AdminLogin";
 import MerchantLogin from "./pages/auth/MerchantLogin";
@@ -56,6 +58,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/cities" element={<CitiesPricing />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/news" element={<News />} />
+            <Route path="/prices" element={<Navigate to="/cities" replace />} />
           </Route>
 
           {/* Login pages (standalone - role-specific) */}
