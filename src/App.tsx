@@ -20,6 +20,7 @@ import DriverLogin from "./pages/auth/DriverLogin";
 import MerchantRegister from "./pages/auth/MerchantRegister";
 import DriverRegister from "./pages/auth/DriverRegister";
 import NotFound from "./pages/NotFound";
+import LiveChat from "./pages/LiveChat";
 
 // Admin imports
 import { AdminLayout } from "@/components/admin/AdminLayout";
@@ -67,6 +68,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/prices" element={<Navigate to="/cities" replace />} />
             <Route path="/driver/become" element={<BecomeDriver />} />
+            <Route path="/live-chat" element={<LiveChat />} />
           </Route>
 
           {/* Login pages (standalone - role-specific) */}

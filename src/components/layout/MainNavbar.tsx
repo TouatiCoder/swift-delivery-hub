@@ -33,6 +33,7 @@ const MainNavbar = () => {
     { href: '/news', labelAr: 'المستجدات', labelFr: 'Actualités' },
     { href: '/prices', labelAr: 'أسعارنا', labelFr: 'Tarifs' },
     { href: '/about', labelAr: 'من نحن', labelFr: 'À propos' },
+    { href: '/live-chat', labelAr: 'الدردشة', labelFr: 'Chat' },
   ];
 
   // Check if link is active
