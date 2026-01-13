@@ -15,6 +15,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { cn } from '@/lib/utils';
+import FloatingChatButton from '@/components/ui/FloatingChatButton';
 
 interface DashboardLayoutProps {
   sidebarContent: React.ReactNode;
@@ -162,6 +163,9 @@ export function DashboardLayout({ sidebarContent, userRole, userName }: Dashboar
           </div>
         </main>
       </div>
+      
+      {/* Floating Chat Button */}
+      <FloatingChatButton />
     </div>
   );
 }

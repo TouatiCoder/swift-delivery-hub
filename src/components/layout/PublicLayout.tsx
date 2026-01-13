@@ -1,13 +1,14 @@
 /**
  * PublicLayout Component
  * Main layout wrapper for all public-facing pages
- * Includes TopInfoBar, MainNavbar, and Footer
+ * Includes TopInfoBar, MainNavbar, Footer, and Floating Chat Button
  */
 
 import { Outlet } from 'react-router-dom';
 import TopInfoBar from './TopInfoBar';
 import MainNavbar from './MainNavbar';
 import Footer from './Footer';
+import FloatingChatButton from '@/components/ui/FloatingChatButton';
 
 const PublicLayout = () => {
   return (
@@ -22,6 +23,9 @@ const PublicLayout = () => {
       <main className="flex-1">
         <Outlet />
       </main>
+      
+      {/* Floating Chat Button */}
+      <FloatingChatButton />
       
       {/* Footer */}
       <Footer />
